@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+ <header>
+	<div class="text-right">
+			{% if 'username' not in session %}
+			<a href="{{url_for('showLogin')}}">Click Here to Login </a>
+			{% else %}
+			<a href="{{url_for('logout')}}">Logout </a>
+			{% endif %}
+	</div>
+	<hr>
+ </header>
+ <div class="link">
+ 	<a href="{{url_for('newRestaurant', restaurants=restaurants)}}">Create New Restaurant</a>
+ 	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		<ul>
+			{% for message in messages %}
+		  		<li><strong>{{message}}</strong></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% endwith %}
+ </div>
+  <div class="padding-top padding-bottom margin-right margin-left">
+	<h1>Restaurants</h1>
+
+	{% for restaurant in restaurants %}
+	<div class="restaurant-list">
+	  <a href="{{url_for('restaurantMenu', restaurant_id = restaurant.id)}}">
+	  {{restaurant.name}}</a>
+	  <a href="{{url_for('editRestaurant', restaurant_id = restaurant.id)}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+	  <a href="{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+	</div>
+	{% endfor %}
+  </div>
+
+</body>
+</html>

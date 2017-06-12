@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>{{restaurant.name}}</h1>
+	<img src="{{creator.picture}}">
+	<figcaption>{{creator.name}}</figcaption>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+		  <li><strong>{{message}}</strong></li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+	{% if items !=[] %}
+		<div>
+			<h2>Appetizer</h2>
+			{% for i in items %}
+				{% if i.course == 'Appetizer' %}
+				<div>
+					<p>{{i.name}}</p>
+					<p>{{i.description}}</p>
+					<p>{{i.price}}</p>
+				<div>
+				{% endif %}
+			{% endfor %}
+			<h2>Entrees</h2>
+			{% for i in items %}
+				{% if i.course == 'Entree' %}
+				<div>
+					<p>{{i.name}}</p>
+					<p>{{i.description}}</p>
+					<p>{{i.price}}</p>
+				<div>
+				{% endif %}
+			{% endfor %}
+			<h2>Dessert</h2>
+			{% for i in items %}
+				{% if i.course == 'Dessert' %}
+				<div>
+					<p>{{i.name}}</p>
+					<p>{{i.description}}</p>
+					<p>{{i.price}}</p>
+				<div>
+				{% endif %}
+			{% endfor %}
+			<h2>Beverage</h2>
+			{% for i in items %}
+				{% if i.course == 'Beverage' %}
+				<div>
+					<p>{{i.name}}</p>
+					<p>{{i.description}}</p>
+					<p>{{i.price}}</p>
+				<div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+
+</body>
+</html>

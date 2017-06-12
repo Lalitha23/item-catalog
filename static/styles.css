@@ -1,0 +1,50 @@
+
+.padding-top {
+	padding-top: 30px;
+}
+.padding-bottom {
+	padding-bottom: 30px;
+}
+.background{
+	background: url("39824919-thai-foods.jpg");
+	background-repeat:no-repeat;
+	background-position:center center;
+	/*opacity: 0.5;*/
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-style: inset;
+    border-width: 15px;
+    border: 15px solid #80e619;
+} 
+header{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.margin-right {
+	margin-right: 30px;
+}
+.margin-left {
+	margin-left: 30px;
+}
+.text-right{
+	text-align: right;
+	margin-right: 30px;
+}
+.restaurant-list {
+
+ 	background-color: #F0F0F0;
+ 	padding: 20px;
+}
+.restaurant-list:hover {
+ 	background-color: #8c7373;
+ 	padding: 20px;
+}
+.link{
+	text-align: center;
+	margin-left: 30px;
+}
