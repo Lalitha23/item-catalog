@@ -180,6 +180,7 @@ def gconnect():
 	login_session['username'] = data['name']
 	login_session['picture'] = data['picture']
 	login_session['email'] = data['email']
+	login_session['provider'] = 'google'
 
 	#see if user exists, if it doesnot make a new one
 	user_id = getUserID(login_session['email'])
